@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\pkg_Cars\CarController;
 use App\Http\Controllers\pkg_Cars\CarImageController;
+use App\Http\Controllers\pkg_Bookings\BookingController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -36,4 +37,6 @@ Route::prefix('cars')->group(function () {
     Route::get('/{car_id}', [CarController::class, 'find']);
     Route::put('/{car_id}', [CarController::class, 'update']);
     Route::delete('/{car_id}', [CarController::class, 'destroy']);
+
+Route::post('/bookings', [BookingController::class, 'store']);
 });
